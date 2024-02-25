@@ -1,12 +1,29 @@
 import 'dart:math';
 
+import 'package:expenses_tracker/screens/stats/stats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'main_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int index = 0;
+
+  late Color selectedItem = Colors.blueAccent;
+  Color unselectedItem = Colors.grey;
+
+  // @override
+  // void initState() {
+  //   selectedItem = Theme.of(context).colorScheme.primary;
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +34,31 @@ class HomeScreen extends StatelessWidget {
           top: Radius.circular(30.0),
         ),
         child: BottomNavigationBar(
-          backgroundColor: Colors.white,
+          onTap: (value) {
+            setState(() {
+              index = value;
+            });
+            print(value);
+          },
+          // fixedColor: Colors.red,
+          // backgroundColor: Colors.white,
           showUnselectedLabels: false,
           showSelectedLabels: false,
           elevation: 3,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.home), label: 'Home'),
+              icon: Icon(
+                CupertinoIcons.home,
+                color: index == 0 ? selectedItem : unselectedItem,
+              ),
+              label: 'Home',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.graph_square_fill), label: 'Stats'),
+                icon: Icon(
+                  CupertinoIcons.graph_square_fill,
+                  color: index == 1 ? selectedItem : unselectedItem,
+                ),
+                label: 'Stats'),
           ],
         ),
       ),
@@ -50,7 +83,7 @@ class HomeScreen extends StatelessWidget {
         ),
         shape: const CircleBorder(),
       ),
-      body: const MainScreen(),
+      body: index == 0 ? MainScreen() : StatsScreen(),
     );
   }
 }
