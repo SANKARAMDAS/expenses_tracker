@@ -65,6 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        shape: const CircleBorder(),
         child: Container(
           width: 60.0,
           height: 60.0,
@@ -81,9 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: const Icon(CupertinoIcons.add),
         ),
-        shape: const CircleBorder(),
       ),
-      body: index == 0 ? MainScreen() : StatsScreen(),
+      body: index == 0 ? const MainScreen() : const StatsScreen(),
     );
   }
 }

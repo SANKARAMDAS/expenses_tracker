@@ -96,24 +96,24 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Total Balance',
                     style: TextStyle(
                         fontSize: 16.0,
                         color: Colors.white,
                         fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 2.0,
                   ),
-                  Text(
+                  const Text(
                     '£ 4000.0',
                     style: TextStyle(
                         fontSize: 40.0,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12.0,
                   ),
                   Padding(
@@ -127,11 +127,11 @@ class MainScreen extends StatelessWidget {
                             Container(
                               width: 25.0,
                               height: 25.0,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.white30,
                                 shape: BoxShape.circle,
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Icon(
                                   CupertinoIcons.arrow_down,
                                   color: Colors.greenAccent,
@@ -142,7 +142,7 @@ class MainScreen extends StatelessWidget {
                             const SizedBox(
                               width: 8.0,
                             ),
-                            Column(
+                            const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -168,11 +168,11 @@ class MainScreen extends StatelessWidget {
                             Container(
                               width: 25.0,
                               height: 25.0,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.white30,
                                 shape: BoxShape.circle,
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Icon(
                                   CupertinoIcons.arrow_down,
                                   color: Colors.red,
@@ -183,7 +183,7 @@ class MainScreen extends StatelessWidget {
                             const SizedBox(
                               width: 8.0,
                             ),
-                            Column(
+                            const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
